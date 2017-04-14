@@ -1,0 +1,144 @@
+    <!-- Navigation -->
+	
+    <div ng-include="'pages/header.html'" ng-controller="headerController"></div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="login-panel">
+                    <div class="panel-heading">
+                        <h3 class="page-header">Edit User</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" name="editProfileForm" novalidate>
+                            <fieldset>
+								<div class="alert alert-danger col-sm-6 col-sm-offset-3" ng-show="userUpdate">
+									<h4 class="Response-message activate" id="user_update_failed_msg">User update failed</h4>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="panel panel-success">
+											<div class="panel-heading">Personal Details</div>
+											<div class="panel-body">
+												<label>First Name<sup class="errMsg">*</sup></label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.fname.$touched)&&(editProfileForm.fname.$invalid)" id="fname_err_msg">Enter 1-20 characters only</span>
+													<input class="form-control" placeholder="First Name" name="fname" type="text" ng-model="currentUser.firstName" ng-pattern="/^[a-zA-Z ]{1,20}$/" required id="fname_tb">
+												</div>
+												<label>Middle Name</label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.mname.$touched)&&(editProfileForm.mname.$invalid)" id="mname_err_msg">Enter 1-20 characters only</span>
+													<input class="form-control" placeholder="Middle Name" name="mname" type="text" ng-model="currentUser.middleName" ng-pattern="/^[a-zA-Z ]{1,20}$/" id="mname_tb">
+												</div>
+												<label>Last Name<sup class="errMsg">*</sup></label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.lname.$touched)&&(editProfileForm.lname.$invalid)" id="lname_err_msg">Enter 1-20 characters only</span>
+													<input class="form-control" placeholder="Last Name" name="lname" type="text" ng-model="currentUser.lastName" ng-pattern="/^[a-zA-Z ]{1,20}$/" required id="lname_tb">
+												</div>
+												<label ng-show="(currentUser.roleDetails.roleId == 2) || (currentUser.roleDetails.roleId == 4)">VZID</label>
+												<div class="form-group" ng-show="(currentUser.roleDetails.roleId == 2) || (currentUser.roleDetails.roleId == 4)">
+													<span class="errMsg" ng-show="(editProfileForm.vzid.$touched)&&(editProfileForm.vzid.$invalid)" id="vzid_err_msg">Enter 1-30 characters only</span>
+													<input class="form-control" placeholder="VZID" name="vzid" type="text" ng-model="currentUser.vzid" ng-pattern="/^[a-zA-Z0-9 ]{1,30}$/" id="vzid_tb">
+												</div>
+												<!--<label>Gender<sup class="errMsg">*</sup></label>
+												<span class="errMsg" ng-show="(editProfileForm.gender.$touched)&&(editProfileForm.gender.$invalid)">Select gender</span>
+												<div class="radio">
+												<label><input type="radio" name="gender" value="m" ng-model="currentUser.gender" required>Male</label>
+												<label><input type="radio" name="gender" value="f" ng-model="currentUser.gender" required>Female</label>
+												</div>-->
+												<!--<label>Date Of Birth</label>
+												<div class="form-group">
+												<input class="form-control" placeholder="Date Of Birth" type="text" ng-model="currentUser.dateOfBirth"  dob-date-picker />
+												</div>-->
+											</div>
+										</div>
+										<div class="panel panel-success">
+											<div class="panel-heading">Contact Details</div>
+											<div class="panel-body">
+												<label>Email address<sup class="errMsg">*</sup></label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.email.$touched)&&(editProfileForm.email.$invalid)" id="email_err_msg">Enter valid email address</span>
+													<input class="form-control" placeholder="Email address" name="email" type="text" ng-model="currentUser.email" ng-pattern="/^[a-zA-Z0-9._-]+[@]([a-zA-Z.])+$/" required id="email_tb">
+												</div>
+												<label ng-show="(currentUser.roleDetails.roleId == 2) || (currentUser.roleDetails.roleId == 4)">CC address</label>
+												<div class="form-group" ng-show="(currentUser.roleDetails.roleId == 2) || (currentUser.roleDetails.roleId == 4)">
+													<span class="errMsg" ng-show="(editProfileForm.ccEmail.$touched)&&(editProfileForm.ccEmail.$invalid)" id="cc_email_err_msg">Enter valid email address</span>
+													<input class="form-control" placeholder="CC address" name="ccEmail" type="text" ng-model="currentUser.ccAddress" ng-pattern="/^[a-zA-Z0-9._-]+[@]([a-zA-Z.])+$/" id="cc_email_tb">
+												</div>
+												<label>Mobile Number<sup class="errMsg">*</sup></label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.mobnum.$touched)&&(editProfileForm.mobnum.$invalid)" id="phone_num_err_msg">Enter mobile number upto 25 characters</span>
+													<input class="form-control" placeholder="Mobile Number" name="mobnum" type="text" size="3" ng-model="currentUser.phoneNumber" ng-pattern="/^[0-9 .+/()-]{1,25}$/" required id="phone_num_tb">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="panel panel-success">
+											<div class="panel-heading">Address Details</div>
+											<div class="panel-body">
+												<label>Address Line1</label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.tempAdd1.$touched)&&(editProfileForm.tempAdd1.$invalid)" id="addr_line1_err_msg">Enter Address min:2 max:30 characters</span>
+													<textarea class="form-control" rows="3" placeholder="Address" name="tempAdd1" type="text" ng-model="currentUser.addressLine1" ng-pattern="/^[a-zA-Z0-9 ,./:-]{2,30}$/" id="addr_line1_tb" />
+												</div>
+												<label>Address Line2</label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.tempAdd2.$touched)&&(editProfileForm.tempAdd2.$invalid)" id="addr_line2_err_msg">Enter Address max:30 characters</span>
+													<textarea class="form-control" rows="3" placeholder="Address" name="tempAdd2" type="text" ng-model="currentUser.addressLine2" ng-pattern="/^[a-zA-Z0-9 ,./:-]{1,30}$/" id="addr_line2_tb" />
+												</div>
+												<label>City</label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.city.$touched)&&(editProfileForm.city.$invalid)" id="city_err_msg">Enter city min:2 max:15 characters</span>
+													<input class="form-control" placeholder="City" name="city" type="text" ng-model="currentUser.city" ng-pattern="/^[a-zA-Z]{2,15}$/" id="city_tb">
+												</div>
+												<label>State</label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.state.$touched)&&(editProfileForm.state.$invalid)" id="state_err_msg">Enter state min:2 max:15 characters</span>
+													<input class="form-control" placeholder="State" name="state" type="text" ng-model="currentUser.state" ng-pattern="/^[a-zA-Z ]{2,15}$/" id="state_tb">
+												</div>
+												<div class="form-group">
+												<label for="country">Country</label><br/>
+													<span class="errMsg" ng-show="(editProfileForm.country.$touched)&&(editProfileForm.country.$invalid)" id="country_err_msg">Select country</span>
+													<select class="form-control" id="country" name="country" ng-options="name for (name,value) in countries" ng-model="currentUser.country" /></select>
+												</div>
+												<label>Postal Code</label>
+												<div class="form-group">
+													<span class="errMsg" ng-show="(editProfileForm.postalCode.$touched)&&(editProfileForm.postalCode.$invalid)" id="postal_code_err_msg">Enter postalCode upto 10 characters</span>
+													<input class="form-control" placeholder="Postal Code" name="postalCode" type="input" ng-model="currentUser.postalCode" ng-pattern="/^[0-9]{1,10}$/" id="postal_code_tb">
+												</div>
+											</div>
+										</div>
+										
+<br/>
+                                <!-- Change this to a button or input when using this as a form -->
+
+									</div>	
+								</div>	
+								<div class="row">
+									<div class="col-sm-3">
+										<!--<button class="btn btn-lg btn-primary btn-block" ng-disabled="!((submitted)&&(editProfileForm.uname.$valid)&&(editProfileForm.pass.$valid)&&(editProfileForm.confPass.$valid)&&(editProfileForm.fname.$valid)&&(editProfileForm.mname.$valid)&&(editProfileForm.lname.$valid)&&(editProfileForm.gender.$valid)&&((!anniversary)||(editProfileForm.anniversaryDate.$valid))&&(editProfileForm.email.$valid)&&(editProfileForm.mobnum.$valid)&&(editProfileForm.tempAdd1.$valid)&&(editProfileForm.tempAdd2.$valid)&&(editProfileForm.city.$valid)&&(editProfileForm.state.$valid)&&(editProfileForm.country.$valid)&&(editProfileForm.postalCode.$valid)&&(editProfileForm.permAddrValidation.$valid)&&((!permAddrVisible)||((editProfileForm.permAdd1.$valid)&&(editProfileForm.permAdd2.$valid)&&(editProfileForm.permCity.$valid)&&(editProfileForm.permState.$valid)&&(editProfileForm.permCountry.$valid)&&(editProfileForm.permZipcode.$valid))))" ng-click="submit()">Save</button>-->
+										<button class="btn btn-lg btn-primary btn-block" ng-disabled="!((editProfileForm.fname.$valid)&&(editProfileForm.mname.$valid)&&(editProfileForm.lname.$valid)&&(editProfileForm.email.$valid)&&(editProfileForm.mobnum.$valid))" ng-click="update()" id="update_user_btn">Update</button>
+										
+									</div>
+
+									<!--<div class="col-sm-3">
+										<button class="btn btn-lg btn-primary btn-block" ng-click="reset()" id="reset_user_btn">Reset</button>
+									</div>-->
+
+									<div class="col-sm-3">
+										<button class="btn btn-lg btn-danger btn-block" style="margin-top:15px;" ng-click="cancel()" id="cancel_user_btn">Cancel</button>
+									</div>
+									
+								</div>
+							</fieldset>
+                        </form>
+						<br/><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    <!-- /.container -->
+	
