@@ -1,6 +1,6 @@
 function urlService($location){
-	//this.baseUrl = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/um/api';
-	this.baseUrl = 'http://localhost:8081/um/api';
+	this.baseUrl = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/um/api';
+	//this.baseUrl = 'http://localhost:8081/um/api';
 	this.registrationUrl = function(){
 	
 		return this.baseUrl + '/api/user/signup';
