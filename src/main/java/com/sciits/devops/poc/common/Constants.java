@@ -3,7 +3,7 @@ package com.sciits.devops.poc.common;
 public class Constants {
 
 	//LOCAL 
-	public static final String DEPLOYMENT_FOLDER = "E:/UM/";
+	public static final String DEPLOYMENT_FOLDER = "/usr/local/tomcat7/webapps/";
 
 	public static final String UPLOADS_FOLDER = DEPLOYMENT_FOLDER + "UM_UPLOADS";
 	public static final String REPORTS_FOLDER = UPLOADS_FOLDER + "/reports";
