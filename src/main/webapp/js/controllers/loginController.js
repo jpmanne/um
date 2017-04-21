@@ -109,8 +109,9 @@ function loginController($scope, $location, $cookies, $http, urlService, success
 				if(angular.equals(data.message, "User login is successful")){
 					
 					console.log("login success");
-					$location.path("/welcome");
-					/* change default password start
+					/*Un Comment the below line to disable secondary auth check */
+					/*$location.path("/welcome");*/
+					/* ---- change default password start --*/
 					if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 1)){
 						
 						$location.path("/welcome");
@@ -123,7 +124,7 @@ function loginController($scope, $location, $cookies, $http, urlService, success
 						$location.path("/secondaryAuthorization");
 					}
 					
-					 change default password end*/
+					 /* --- change default password end -- */
 					
 				}else{
 					
