@@ -110,9 +110,9 @@ function loginController($scope, $location, $cookies, $http, urlService, success
 					
 					console.log("login success");
 					/*Un Comment the below line to disable secondary auth check */
-					/*$location.path("/welcome");*/
+					$location.path("/welcome");
 					/* ---- change default password start --*/
-					if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 1)){
+					/*if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 1)){
 						
 						$location.path("/welcome");
 						
@@ -122,7 +122,7 @@ function loginController($scope, $location, $cookies, $http, urlService, success
 					}else if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 0)){
 						
 						$location.path("/secondaryAuthorization");
-					}
+					}*/
 					
 					 /* --- change default password end -- */
 					
