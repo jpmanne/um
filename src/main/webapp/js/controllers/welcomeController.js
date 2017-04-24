@@ -42,4 +42,5 @@ function welcomeController($scope, $http, $cookies, $location, $timeout, urlServ
 		
 		logoutService.userLogout(res, urlValue);
 	}
+	$scope.welcomeMsg = "Welcome to the Demo ";
 }
