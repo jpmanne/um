@@ -16,7 +16,7 @@ function welcomeController($scope, $http, $cookies, $location, $timeout, urlServ
 
 	$scope.check = true;
 
-	/*back button disable start*/
+	/*back button disable start        */
 
 	var signOutButton = false;
 
