@@ -16,11 +16,8 @@
         <jdk.version>1.7</jdk.version>
         <context.path>SpringHibernateAnnotations</context.path>
         <sonar.host.url>http://34.198.120.187:9000</sonar.host.url>
-        
     	<sonar.exclusions>src/main/webapp/**/*</sonar.exclusions>
     	<sonar.inclusions>src/main/java/**/*.java</sonar.inclusions>
-
-        
     </properties>
 
     <build>
