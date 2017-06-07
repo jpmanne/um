@@ -49,7 +49,7 @@ import jdk.nashorn.internal.ir.annotations.Ignore;
 @ActiveProfiles("local")
 @WebAppConfiguration
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class UMTests  extends UMDao<Serializable, SessionBase>{
+public class UMTest  extends UMDao<Serializable, SessionBase>{
 	
 	private MockMvc mockMvc;
 	public static String  superUserAuthCode;
