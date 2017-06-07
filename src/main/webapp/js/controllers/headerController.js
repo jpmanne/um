@@ -2,7 +2,7 @@ function headerController($scope, $cookies){
 
 	var res = $cookies.getObject('signInResult');
 	
-	/*console.log(res);
+	console.log(res);
 	
 	$scope.roleId = res.responsePayload.roleId;
 	$scope.defaultPassword = res.responsePayload.isDefaultPasswordChanged;
@@ -28,5 +28,5 @@ function headerController($scope, $cookies){
 	}
 	
 	console.log("defaultPassword: "+$scope.defaultPassword);
-	console.log("secondaryAuthorization: "+$scope.secondaryAuthorization);*/
+	console.log("secondaryAuthorization: "+$scope.secondaryAuthorization);
 }
