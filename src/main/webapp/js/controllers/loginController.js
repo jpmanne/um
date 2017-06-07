@@ -111,7 +111,7 @@ function loginController($scope, $location, $cookies, $http, urlService, success
 					console.log("login success");
 					$location.path("/welcome");
 					
-					/*Secondary authorization begin 
+					 
 					 if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 1)){
 						
 						$location.path("/welcome");
@@ -122,7 +122,7 @@ function loginController($scope, $location, $cookies, $http, urlService, success
 					}else if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 0)){
 						
 						$location.path("/secondaryAuthorization");
-					}End of Secondary authorization  */
+					}
 					
 					 
 					
