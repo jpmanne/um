@@ -5,7 +5,8 @@ function headerController($scope, $cookies){
 	console.log(res);
 	
 	$scope.roleId = res.responsePayload.roleId;
-	$scope.defaultPassword = res.responsePayload.isDefaultPasswordChanged;
+	/*Secondary authorization begin 
+	 $scope.defaultPassword = res.responsePayload.isDefaultPasswordChanged;
 	
 	if($scope.secondaryAuthorization == 1){
 		
@@ -29,4 +30,5 @@ function headerController($scope, $cookies){
 	
 	console.log("defaultPassword: "+$scope.defaultPassword);
 	console.log("secondaryAuthorization: "+$scope.secondaryAuthorization);
+	End Secondary authorization  */
 }
