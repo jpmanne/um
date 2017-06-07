@@ -17,7 +17,7 @@
         <context.path>SpringHibernateAnnotations</context.path>
         <sonar.host.url>http://34.198.120.187:9000</sonar.host.url>
         <sonar.language>js</sonar.language>
-    	<sonar.exclusions>src/main/webapp/js/*</sonar.exclusions>
+    	<sonar.exclusions>src/main/webapp/**/*</sonar.exclusions>
 
         
     </properties>
