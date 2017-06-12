@@ -192,6 +192,7 @@
   			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/jgeocoder-0.5-jar-with-dependencies.jar</systemPath>
 		</dependency>
     </dependencies>
+</project>
 <!-- coverage -->
 <profile>
     <id>coverage</id>
@@ -306,4 +307,3 @@
         </plugins>
     </build>
 </profile>
-</project>
