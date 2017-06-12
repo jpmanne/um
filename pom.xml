@@ -36,7 +36,7 @@ because we want to be to able to execute mvn sonar:sonar without passing a profi
 <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
 <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 <!-- Jacoco version to use -->
-<jacoco.version>0.7.2.201409121644</jacoco.version>
+<jacoco.version>2.2.1</jacoco.version>
 <!-- The Sonar Jacoco Listener for JUnit to extract coverage details per test -->
 <sonar-jacoco-listeners.version>1.4</sonar-jacoco-listeners.version>
 <!-- Don't let Sonar execute tests. We will ask it to Maven 'sonar.dynamicAnalysis' is deprecated since version 4.3 and should no longer be used. -->
