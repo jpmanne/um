@@ -47,8 +47,9 @@ because we want to be to able to execute mvn sonar:sonar without passing a profi
     mvn clean install -Prun-its,coverage -Djacoco.outputDir=${WORKSPACE}/target
     Note that unfortunately using the following does not work because of
     http://jira.codehaus.org/browse/SONAR-3427:
-<jacoco.outputDir>${session.executionRootDirectory}/target/</jacoco.outputDir>
+
 -->
+<jacoco.outputDir>${session.executionRootDirectory}/target/</jacoco.outputDir>
 <jacoco.outputDir>${project.build.directory}</jacoco.outputDir>
 <!-- Jacoco output file for UTs -->
 <jacoco.out.ut.file>jacoco-ut.exec</jacoco.out.ut.file>
