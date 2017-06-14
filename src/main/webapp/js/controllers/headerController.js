@@ -1,7 +1,7 @@
 function headerController($scope, $cookies){
 	var res = $cookies.getObject('signInResult');	
 	/* START: Uncomment to enable SA */
-	/*console.log(res);	
+	console.log(res);	
 	$scope.roleId = res.responsePayload.roleId;	 
 	 $scope.defaultPassword = res.responsePayload.isDefaultPasswordChanged;	
 	if($scope.secondaryAuthorization == 1){		
@@ -18,6 +18,6 @@ function headerController($scope, $cookies){
 		}
 	}	
 	console.log("defaultPassword: "+$scope.defaultPassword);
-	console.log("secondaryAuthorization: "+$scope.secondaryAuthorization);*/
+	console.log("secondaryAuthorization: "+$scope.secondaryAuthorization);
 	/* END: Uncomment to enable SA */	
 }
