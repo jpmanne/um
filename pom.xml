@@ -15,7 +15,7 @@
 		<jdk.version>1.7</jdk.version>
 		<context.path>SpringHibernateAnnotations</context.path>
 		<sonar.host.url>http://34.198.120.187:9000</sonar.host.url>
-
+		<jacoco.version>2.2.1</jacoco.version>
 		<sonar.exclusions>src/main/webapp/**/*</sonar.exclusions>
 		<sonar.inclusions>src/main/java/**/*.java</sonar.inclusions>
 	</properties>
@@ -31,6 +31,25 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.5.201505241946</version>
+				<executions>
+				<execution>
+				<goals>
+				<goal>prepare-agent</goal>
+				</goals>
+				</execution>
+				<execution>
+				<id>report</id>
+				<phase>prepare-package</phase>
+				<goals>
+				<goal>report</goal>
+				</goals>
+				</execution>
+				</executions>
+				</plugin>
 		</plugins>
 		<sourceDirectory>src/main/java</sourceDirectory>
 	</build>
