@@ -110,17 +110,17 @@ function loginController($scope, $location, $cookies, $http, urlService, success
 					
 					console.log("login success");
 					/* START: Comment to enable SA */
-					/*$location.path("/welcome");*/
+					$location.path("/welcome");
 					/* END: Comment to enable SA */
 					
 					/* START: Uncomment to enable SA */					 
-					if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 1)){
+					/*if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 1)){
 						$location.path("/welcome");						
 					}else if((data.responsePayload.isDefaultPasswordChanged == 0) && (data.responsePayload.isSecondaryAuthorizationSaved == 0)){						
 						$location.path("/changeDefaultPassword");
 					}else if((data.responsePayload.isDefaultPasswordChanged == 1) && (data.responsePayload.isSecondaryAuthorizationSaved == 0)){
 						$location.path("/secondaryAuthorization");
-					}	
+					}*/	
 					/* END: Uncomment to enable SA */					
 				}else{					
 					$location.path("/login");
