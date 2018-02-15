@@ -1,6 +1,7 @@
 function headerController($scope, $cookies){
 
 	var res = $cookies.getObject('signInResult');
+	console.log(res); // Added this for testing purpose
 	
 	/*console.log(res);
 	
