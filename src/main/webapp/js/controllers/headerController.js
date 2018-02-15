@@ -1,5 +1,7 @@
 function headerController($scope, $cookies){
-	var res = $cookies.getObject('signInResult');	
+	var res = $cookies.getObject('signInResult');
+	console.log(res); //Added for testing purpose.
+	
 	/* START: Uncomment to enable SA */
 	console.log(res);	
 	$scope.roleId = res.responsePayload.roleId;	 
