@@ -12,9 +12,12 @@
                     <img src="img/UM-logo.png" class="img-responsive" style="width:160px" alt="">
                 </a>
             </div>
-			
-			<!--<ul class="nav navbar-top-links navbar-right" ng-show="(defaultPassword == 1) && (secondaryAuthorization == 1)">-->
-			<ul class="nav navbar-top-links navbar-right">
+			<!-- START: Uncomment to enable SA -->
+			<ul class="nav navbar-top-links navbar-right" ng-show="(defaultPassword == 1) && (secondaryAuthorization == 1)"> 
+
+			<!--<ul class="nav navbar-top-links navbar-right"> -->
+
+			<!-- END: Uncomment to enable SA -->
 				<li class="dropdown">
 					<a class="dropdown-toggle btn btn-primary" data-toggle="dropdown" id="users_tab">
 						Users <i class="fa fa-caret-down"></i>
@@ -40,31 +43,30 @@
 						<li class="divider"></li>
 						<li><a ng-click="logout()" id="user_logout_dd"><i class="fa fa-sign-out fa-fw logout-icon"></i> Sign out</a></li>
 					</ul>
-						<!-- /.dropdown-user -->
+					<!-- /.dropdown-user -->
 				</li>
 			</ul>
-			
-			<ul class="nav navbar-top-links navbar-right" ng-show="(defaultPassword == 0) || (secondaryAuthorization == 0)">
+			<!-- START: Uncomment to enable SA -->
+			 <ul class="nav navbar-top-links navbar-right" ng-show="(defaultPassword == 0) || (secondaryAuthorization == 0)">
 				<li class="dropdown">
                     <a class="dropdown-toggle btn btn-primary" data-toggle="dropdown" id="user_details_tab">
                         <i class="fa fa-user fa-fw user1"></i> {{loginUserName}} <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user pull-right">
                         <li><a ng-click="logout()" id="user_logout_dd"><i class="fa fa-sign-out fa-fw logout-icon"></i> Sign out</a></li>
-                    </ul>
-                    
+                    </ul>                    
                 </li>
 			</ul>
-			
+			<!-- END: Uncomment to enable SA -->
         </div>
 		<script>
-$(document).ready(function(){
-    $(".dropdown-menu li a").hover(function(){
-        $(this).addClass("color-white");
-        }, function(){
-        $(this).removeClass("color-white");
-    });
-});
-</script>
+		$(document).ready(function(){
+			$(".dropdown-menu li a").hover(function(){
+				$(this).addClass("color-white");
+				}, function(){
+				$(this).removeClass("color-white");
+			});
+		});
+		</script>
         <!-- /.container -->
-    </nav>
+</nav>
